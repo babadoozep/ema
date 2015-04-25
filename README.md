@@ -1,2 +1,2 @@
-# react-starter-pack
-A starter pack for tutoring React lessons
+# ema
+Episodic memory app. 
