@@ -3,7 +3,7 @@
 // require("./index.styl")
 
 import React from "react"
-import Application from "./application"
+import App from "./app.jsx"
 // import routes from "./routes"
 // import Router from "react-router"
 
@@ -20,4 +20,4 @@ import Application from "./application"
 //   )
 // )
 
-React.render(<Application />, document.body);
+React.render(<App />, document.body);
