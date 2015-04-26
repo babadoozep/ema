@@ -1,40 +1,94 @@
 import React from "react"
-import Moment from "react-starter-pack/node_modules/moment/moment.js"
-import DateList from "./../date-list.jsx"
-import AddItem from "./add-item.jsx"
+import moment from "moment"
+import DateList from "./date-list"
+import AddItem from "./add-item"
 import ItemList from "./item-list"
-
+import ActualItemList from "./actual-item-list"
+import {COMMON_DATE} from "./resources/date-formats"
+import dummyData from "./resources/dummy-data"
+// Literally,
+//
+//import dateFormats from "./resources/date-formats"
+//const COMMON_DATE = dateFormats.COMMON_DATE
 
 
 export default React.createClass({
     getInitialState(){
-        var today = moment();
-        var oneDayAgo = today.subtract('days', 1);
-        var twoDaysAgo = today.subtract('days', 2);
-        var threeDaysAgo = today.subtract('days', 3);
-        var fourDaysAgo = today.subtract('days', 4);
-        var fiveDaysAgo = today.subtract('days', 5);
-        var sixDaysAgo = today.subtract('days', 6);
-        return{
-            items: [],
-            lastWeek: [today, oneDayAgo, twoDaysAgo, threeDaysAgo, fourDaysAgo, fiveDaysAgo, sixDaysAgo]
+        let days = dummyData.days.map(function (day) {
+            day.date = moment(day.date)
+
+            return day
+        });
+
+        return {
+            days: days,
+            currentDayIndex: dummyData.currentDayIndex
         }
     },
+
     addItem(item){
-        this.state.items.push(item);
+        let
+            {days, currentDayIndex} = this.state,
+            currentDay = days[currentDayIndex]
+
+        currentDay.guess.push(item)
+
+        days[currentDayIndex] = currentDay
+
         this.setState({
-            items: this.state.items
+            days: days
         })
     },
+
+    getCurrentDay() {
+        let {days, currentDayIndex} = this.state
+
+        return days[currentDayIndex]
+    },
+
+    handleNextDay() {
+        let {days, currentDayIndex} = this.state
+
+        if (currentDayIndex === days.length - 1) {
+            this.setState({currentDayIndex: 0})
+        } else {
+            this.setState({
+                currentDayIndex: currentDayIndex + 1
+            })
+        }
+    },
+
+    revealActual(){
+        let
+            {days, currentDayIndex} = this.state,
+            currentDay = days[currentDayIndex]
+
+        currentDay.revealed = true
+
+        days[currentDayIndex] = currentDay
+
+        this.setState({
+            days: days
+        })
+    },
+
+    formatDate(date) {
+        return date.format(COMMON_DATE)
+    },
+
     render(){
-        return(
-        <div>
-            <h2>{this.state.lastWeek[0]}</h2>
-            <AddItem addNew={this.addItem} />
-            <ItemList items={this.state.items} />
-            <DateList lastWeek={this.state.lastWeek} />
-            <ActualItemList items={this.state.items} />
+        let currentDay = this.getCurrentDay()
+
+        return <div>
+            <h2>
+                {this.formatDate(currentDay.date)}
+            </h2>
+
+            <AddItem addNew={this.addItem} handleNextDay={this.handleNextDay} revealActual={this.revealActual}/>
+
+            <ItemList items={currentDay.guess} />
+
+            <ActualItemList currentDay={currentDay} />
         </div>
-        )
     }
 });

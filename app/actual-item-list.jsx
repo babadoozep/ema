@@ -1,17 +1,16 @@
 import React from "react"
+import ItemList from "./item-list"
 
 
 export default React.createClass({
     render(){
-        var listItems = this.props.items.map(function (item) {
-            return <li>{item}</li>;
-        });
-        return (
-            <div>
-                <ul>
-                    {listItems}
-                </ul>
-            </div>
-        )
+        let {currentDay} = this.props
+
+        if (currentDay.revealed){
+            return <ItemList items={currentDay.items} />
+        } else {
+            return <div>Placeholder</div>
+        }
+
     }
 });

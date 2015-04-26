@@ -21,6 +21,7 @@
   </head>
 
   <body spellcheck>
+
     {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
       <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
     {% } %}
