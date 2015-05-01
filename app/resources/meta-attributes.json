@@ -1,9 +1,8 @@
 {
-  "title": "React Starter Pack",
-  "description": "React Starter Pack",
+  "title": "Episodic Memory App",
+  "description": "Episodic Memory App",
   "domain": "example.com",
   "keywords": [
-    "react",
-    "starter"
+    "memory"
   ]
 }

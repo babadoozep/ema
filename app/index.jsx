@@ -1,9 +1,12 @@
 "use strict"
 
-// require("./index.styl")
+// This require statement is unique to Webpack. It inserts the .styl file into
+// the document exactly one time. The .styl prefix is only necessary so that Webpack
+// can know which index file to load.
+require("./index.styl")
 
 import React from "react"
-import App from "./app.jsx"
+import Application from "./application"
 // import routes from "./routes"
 // import Router from "react-router"
 
@@ -20,4 +23,4 @@ import App from "./app.jsx"
 //   )
 // )
 
-React.render(<App />, document.body);
+React.render(<Application />, document.body);
