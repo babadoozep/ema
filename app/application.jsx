@@ -6,18 +6,43 @@ import DateList from "components/date-list"
 import AddItem from "components/add-item"
 import ItemList from "components/item-list"
 import ActualItemList from "components/actual-item-list"
-import {COMMON_DATE} from "resources/date-formats"
+import {COMMON_DATE, STORAGE_DATE} from "resources/date-formats"
 import dummyData from "resources/dummy-data"
+
 
 // React 0.13.3 includes ES6 class syntax. This will replace React.createComponent
 export default class Application extends React.Component {
   // constructor is a special method that runs when the class is created.
   constructor() {
-    let days = dummyData.days.map(function (day) {
+    let dayIDs = []
+
+    for (let i = 0; i < 7; i++) {
+      dayIDs.push(moment().subtract(i, "days").format(STORAGE_DATE))
+    }
+
+    let days = dayIDs.map(function (dayID) {
+      let day = window.localStorage[dayID]
+
+      if (day) {
+        // Retrieve data from localstorage
+        return JSON.parse(day)
+      } else {
+        // User has never been here before. Make some data.
+        return {
+          date: dayID,
+          items: [],
+          guess: [],
+          revealed: false
+        }
+      }
+    })
+
+    // Replace date string with moment object
+    days = days.map(function (day) {
       day.date = moment(day.date)
 
       return day
-    });
+    })
 
     // This code replaces the previous getInitialState.
     this.state = {
@@ -64,6 +89,16 @@ export default class Application extends React.Component {
         currentDayIndex: currentDayIndex + 1
       })
     }
+
+    this.saveData()
+  }
+
+  saveData() {
+    let {days} = this.state
+
+    days.forEach(function (day) {
+      window.localStorage[day.date.format(STORAGE_DATE)] = JSON.stringify(day)
+    })
   }
 
   toggleActualVisibility() {
