@@ -4,25 +4,27 @@ import React from "react"
 import {COMMON_DATE} from "../../resources/date-formats"
 
 function renderDayListItem (day, i) {
-  return <li key={i}>
+  return <li className="day-list-item" key={i}>
     {this.formatDate(day)}
   </li>
 }
 
-export default class DateList extends React.Component {
+export default React.createClass({
   formatDate(date) {
-    return date.format(COMMON_DATE)
-  }
+    return date.date.format(COMMON_DATE)
+  },
 
   renderDays() {
     return this.props.lastWeek.map(renderDayListItem.bind(this))
-  }
+  },
+  render(){
 
-  render() {
-    return <div>
-      <ul>
-        {this.renderDays()}
-      </ul>
-    </div>
+    return (
+        <div className="date-list">
+          <ol>
+            {this.renderDays()}
+          </ol>
+        </div>
+    )
   }
-}
+});
