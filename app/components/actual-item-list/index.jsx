@@ -10,7 +10,8 @@ export default class ActualItemList extends React.Component {
     if (currentDay.revealed) {
       return <ItemList items={currentDay.items} />
     } else {
-      return <div>Placeholder</div>
+      return <div className="placeholder">Placeholder</div>
     }
   }
 }
+

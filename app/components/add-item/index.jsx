@@ -42,9 +42,10 @@ export default class AddItem extends React.Component {
 
   render() {
     return <div>
-      <input type="text" value={this.state.newItem} onChange={this.updateNewItem} onKeyUp={this.handleKeyUp} />
-      <Button onClick={this.props.handleNextDay}>Done</Button>
-      <Button onClick={this.props.revealActual}>Reveal</Button>
+      <input
+        type="text" value={this.state.newItem}
+        onChange={this.updateNewItem.bind(this)}
+        onKeyUp={this.handleKeyUp.bind(this)} />
       </div>
   }
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import moment from "moment"
+import {Button} from "react-bootstrap"
 import {PageHeader} from "react-bootstrap"
 import DateList from "components/date-list"
 import AddItem from "components/add-item"
@@ -30,7 +31,7 @@ export default class Application extends React.Component {
   addItem(item) {
     let
       {days, currentDayIndex} = this.state,
-      currentDay = days[currentDayIndex]
+      currentDay = this.getCurrentDay()
 
     currentDay.guess.push(item)
 
@@ -51,27 +52,38 @@ export default class Application extends React.Component {
     let {days, currentDayIndex} = this.state
 
     if (currentDayIndex === days.length - 1) {
-      this.setState({currentDayIndex: 0})
+      console.debug("current days is wrapping around")
+
+      this.setState({
+        currentDayIndex: 0
+      })
     } else {
+      console.debug("current day is incrementing.")
+
       this.setState({
         currentDayIndex: currentDayIndex + 1
       })
     }
   }
 
-  revealActual() {
+  toggleActualVisibility() {
     let
       {days, currentDayIndex} = this.state,
-      currentDay = days[currentDayIndex]
+      currentDay = this.getCurrentDay()
 
-    currentDay.revealed = true
+    // Flip the revealed boolean to the opposite of what it is.
+    currentDay.revealed = !currentDay.revealed
 
+    // store the day copy in the days array copy
     days[currentDayIndex] = currentDay
 
+
+    // Tell React to replace the days array in the component state with the copy.
     this.setState({
       days: days
     })
   }
+
 
   formatDate(date) {
     return date.format(COMMON_DATE)
@@ -85,14 +97,28 @@ export default class Application extends React.Component {
         {this.formatDate(currentDay.date)}
       </PageHeader>
 
-      <AddItem
-        addNew={this.addItem.bind(this)}
-        handleNextDay={this.handleNextDay.bind(this)}
-        revealActual={this.revealActual.bind(this)}/>
+      <AddItem addNew={this.addItem.bind(this)} />
+
+      <Button onClick={this.handleNextDay.bind(this)}>
+        Done
+      </Button>
+
+      <Button onClick={this.toggleActualVisibility.bind(this)}>
+        {/* Ternary statements are like one liner if statements */}
+        {currentDay.revealed ? "Hide" : "Show"}
+      </Button>
 
       <ItemList items={currentDay.guess} />
 
+      {/* This component decides to show depending on the currentDay reveal state. */}
       <ActualItemList currentDay={currentDay} />
+
+      {/* Shows regardless of anything. */}
+      <DateList lastWeek={this.state.days} />
+
+      <aside className="debugging">
+        Current Day Index: {this.state.currentDayIndex}
+      </aside>
     </div>
   }
 }
