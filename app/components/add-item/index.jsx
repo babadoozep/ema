@@ -1,7 +1,7 @@
 require("./add-item.styl")
 
 import React from "react"
-import {Button} from "react-bootstrap"
+//import {Button} from "react-bootstrap"
 
 const ENTER_KEYCODE = 13;
 
@@ -41,8 +41,8 @@ export default class AddItem extends React.Component {
   }
 
   render() {
-    return <div>
-      <input
+    return <div className="text-box-container">
+      <input className="text-box" placeholder="List the things you did on this day..."
         type="text" value={this.state.newItem}
         onChange={this.updateNewItem.bind(this)}
         onKeyUp={this.handleKeyUp.bind(this)} />

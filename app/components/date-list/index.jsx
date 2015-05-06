@@ -3,11 +3,6 @@ require("./date-list.styl")
 import React from "react"
 import {COMMON_DATE} from "../../resources/date-formats"
 
-function renderDayListItem (day, i) {
-  return <li className="day-list-item" key={i}>
-    {this.formatDate(day)}
-  </li>
-}
 
 export default React.createClass({
   formatDate(date) {
@@ -15,13 +10,17 @@ export default React.createClass({
   },
 
   renderDays() {
-    return this.props.lastWeek.map(renderDayListItem.bind(this))
+    return this.props.lastWeek.map((day,index)=>
+            <li key={index} className={index == this.props.currentDayIndex ? "currentDay" : ""}>
+          {this.formatDate(day)}
+        </li>
+    )
   },
   render(){
 
     return (
-        <div className="date-list">
-          <ol>
+        <div >
+          <ol className="date-list">
             {this.renderDays()}
           </ol>
         </div>

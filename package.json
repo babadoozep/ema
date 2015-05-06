@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap-styl": "^4.0.4",
     "classnames": "^1.1.4",
+    "firebase": "^2.2.4",
     "immutable": "^3.6.2",
     "lodash": "^2.4.1",
     "moment": "~2.7.0",

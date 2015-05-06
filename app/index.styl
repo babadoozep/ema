@@ -1,17 +1,109 @@
 // Rather than host the icon font ourselves. We use a public resource.
-$icon-font-path = "//netdna.bootstrapcdn.com/bootstrap/3.3.2/fonts/"
+/*$icon-font-path = "//netdna.bootstrapcdn.com/bootstrap/3.3.2/fonts/"*/
 
 // Importing the index file from the bootstrap-styl package includes all the
 // styles needed for react-bootstrap.
-@import "~bootstrap-styl/bootstrap/index"
+/*@import "~bootstrap-styl/bootstrap/index"*/
 
 
-body {
+  
+#bottom-components {
+  text-align: center;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+}
+
+.left, .center, .right {
+  width: 28vw;
+  vertical-align: top;
+  display: inline-block;
+  /*border: solid green;*/
+  box-shadow: -5px 5px 10px 3px gray;
+}
+
+.left {
+  margin-left: 50px;
+  float: left;
+}
+
+.center {
+  margin: 0 10px 25px 10px;
+  padding: 10px;
+
+}
+
+.right {
+  margin-right: 50px;
+  float: right;
+  text-align: left;
+}
+
+.actual {
+  display: inline-block;
+}
+
+.today {
+  font: 8.5vw 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  color: darkorange;
+  margin: 10px auto 45px auto;
+  text-align: center;
+  opacity: .5;
+  width: 100%;
+}
+
+.center h5 {
+  font: 11px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: gray;
+  text-align: right;
+  opacity: .8;
+  font-style: italic;
+  margin-bottom: 8px;
+  margin-right: 15px;
+}
+
+.buttons {
+  height: 10px;
+  margin-bottom: 15px;
+}
+
+.next {
+  float: right;
+  width: 70px;
+  margin-right: 15px;
+}
+
+.toggle {
+  float: right;
+  width: 90px;
+  margin-right: 5px;
+}
+
+
+
+.left ol{
+  padding-left: 0;
+
+}
+
+.left li {
+  font: 2vw 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  list-style-type: none;
+  padding: 15px;
+  opacity: .5;
+}
+
+.date-list{
+  margin: 0;
+}
+
+.left li:nth-child(odd) {
   background-color: lightgray;
 }
 
-.debugging {
-  border: 2px dotted red;
-  margin: 20px;
-  padding: 4px;
+
+.currentDay{
+  border: solid darkorange 1px;
 }
