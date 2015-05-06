@@ -6,12 +6,7 @@
   min-height: 70px;
   margin-left: -60px;
   margin-right: 20px;
-  padding-left: 60px;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-
-
+  padding: 15px 20px 10px 60px;
 }
 
 .directions ol{
@@ -28,13 +23,64 @@
   font-weight: 100;
   opacity: .5;
   padding-right: 20px;
-
-
-
-
 }
 
 .color {
   background-color: lightgrey;
+}
+
+
+
+.actual {
+  width: 100%;
+  font: 1.5vw 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  opacity: .5;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.actual div {
+  width: 100%;
+  min-height: 70px;
+  margin-left: -40px;
+  margin-right: 20px;
+  /*border: solid green;*/
+
+}
+
+.actual-item-background:nth-child(odd){
+  background-color: lightgray;
+}
+
+.actual li {
+  line-height: 65px;
+  /*border: solid red;*/
+  width: 100%
+  margin-left: 50px
+
+}
+
+
+@media screen and (max-width: 1100px) {
+
+  .directions ol li div {
+    padding: 5px 20px 5px 60px;
+  }
+
+
+
+  .directions li{
+    font: 24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+
+  }
+
+  .actual {
+    font: 24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+
+  }
+
 }
 

@@ -4,7 +4,7 @@ import moment from "moment"
 //import {PageHeader} from "react-bootstrap"
 import DateList from "components/date-list"
 import AddItem from "components/add-item"
-import ItemList from "components/item-list"
+//import ItemList from "components/item-list"
 import ActualItemList from "components/actual-item-list"
 import {COMMON_DATE, STORAGE_DATE} from "resources/date-formats"
 import dummyData from "resources/dummy-data"
@@ -161,10 +161,20 @@ export default class Application extends React.Component {
 
     let listItems = sourceList.map((item, i) =>
       <li className="guess" key={i}>
+        <button className="delete-button" onClick={e=>this.deleteItem(i)}>Delete</button>
         {item}
-        <button onClick={e=>this.deleteItem(i)}>Delete</button>
       </li>
     )
+
+    if (this.state.completed){
+      return <div className="final-image">
+          <img className="cube" src="app/resources/img/goodday.jpg" />
+          <div className="goodbye">
+            <p>Great Job! Come back tomorrow or click the button below to go back to today.</p>
+            <button className="refresh" onClick={e=>window.location.reload()}>Go Back</button>
+          </div>
+        </div>
+    }
 
     //if state completed is true, return new page, else... return this:
 
@@ -173,13 +183,13 @@ export default class Application extends React.Component {
         {this.formatDate(currentDay.date)}
       </h1>
 
-      <div id="bottom-components">
+      <section className="bottom-components">
 
         <div className="center">
           <AddItem addNew={this.addItem.bind(this)} />
-          <h5>
-            Press the return key to create a new item.
-          </h5>
+          <h4>
+            *Press the <u>return</u> key to create a new item.
+          </h4>
           <div className="buttons">
             <button className="next" onClick={this.handleNextDay.bind(this)}>
               {this.state.currentDayIndex == 0 ? "Save" : "Next"}
@@ -195,15 +205,15 @@ export default class Application extends React.Component {
 
         <div className="right">
         {/* This component decides to show depending on the currentDay reveal state. */}
-        <ActualItemList currentDay={currentDay} />
+        <ActualItemList currentDay={currentDay}  />
         </div>
 
         {/* Shows regardless of anything. */}
         <div className="left">
           <DateList lastWeek={this.state.days} currentDayIndex={this.state.currentDayIndex} />
         </div>
-
-      </div>
+        <span className="stretch"></span>
+      </section>
 
     </div>
   }

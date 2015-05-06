@@ -8,7 +8,7 @@ export default class ActualItemList extends React.Component {
     let {currentDay} = this.props
 
     if (currentDay.revealed) {
-      return <div className="actual">
+      return <div>
         <ItemList items={currentDay.items} />
         </div>
 
@@ -20,7 +20,7 @@ export default class ActualItemList extends React.Component {
           <li><div className="color">Come back tomorrow and do the same thing, then...</div></li>
           <li><div>Try to remember the events from the previous day(s) and make a new list.</div></li>
           <li><div className="color">Click <b>Reveal Actual</b> to compare your new list with the original one.</div></li>
-          <li><div>Repeat! Try and remember what you did on each day of the previous week.</div></li>
+          <li><div>Repeat! Try to remember what you did on each day of the previous week.</div></li>
         </ol>
       </div>
     }

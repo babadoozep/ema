@@ -5,13 +5,13 @@ import React from "react"
 export default class ItemList extends React.Component {
   render() {
     let listItems = this.props.items.map(function (item, i) {
-      return <li className="guess" key={i}>
+      return <div className="actual-item-background"><li key={i}>
         {item}
-      </li>
+      </li></div>
     })
 
     return <div >
-      <ul className="item-list">
+      <ul className="actual">
         {listItems}
       </ul>
     </div>
