@@ -6,6 +6,10 @@
 /*@import "~bootstrap-styl/bootstrap/index"*/
 
 
+  .column {
+    float: left;
+    width: 33.33%;
+  }
 
   .bottom-components {
     text-align: center;
@@ -16,25 +20,27 @@
   .left, .center, .right {
     width: 28vw;
     vertical-align: top;
-    display: inline-block;
+    /*display: inline-block;*/
     /*border: solid green;*/
     box-shadow: -5px 5px 10px 3px gray;
+    /*float: left;*/
+    margin: 0 auto 0 auto;
   }
 
   .left {
-    margin-left: 50px;
-    float: left;
+    /*margin-left: 50px;*/
+    /*float: left;*/
   }
 
   .center {
-
+    /*margin-left:*/
     padding-bottom: 10px;
 
   }
 
   .right {
-    margin-right: 50px;
-    float: right;
+    /*margin-right: 50px;*/
+    /*float: right;*/
     text-align: left;
   }
 
@@ -211,23 +217,21 @@
 
   .center {
     width: 450px;
-    clear: both;
-    display: block;
-    margin: 0 auto 15px auto;
 
   }
 
-  .left {
-    display: none;
+.col-1 {
+  display: none;
 
-  }
+}
+
+.column {
+  float: none;
+  width: 100%;
+}
 
   .right {
-    display: block;
     width: 450px;
-    float: none;
-    margin: 10px auto 10px auto;
-
   }
 
   .guess {
