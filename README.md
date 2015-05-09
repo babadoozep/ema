@@ -1,2 +1,0 @@
-# ema
-Episodic memory app. 
