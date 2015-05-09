@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d363f16-a9bf-42c9-a2d6-a867f528e1e9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/application.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/actual-item-list/actual-item-list.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/actual-item-list/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/add-item/add-item.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/add-item/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/date-list/date-list.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/date-list/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/item-list/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/item-list/item-list.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/examples/example-component.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/examples/example-component.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/index.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/index.styl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/date-formats.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/dummy-data.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/img/brain.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/img/goodday.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/resources/meta-attributes.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/watch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="react-starter-pack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -263,11 +239,11 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32618025" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32618025" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14888488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14888488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
