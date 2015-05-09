@@ -1,16 +1,13 @@
 import React from "react"
 import moment from "moment"
-//import {Button} from "react-bootstrap"
-//import {PageHeader} from "react-bootstrap"
 import DateList from "components/date-list"
 import AddItem from "components/add-item"
-//import ItemList from "components/item-list"
 import ActualItemList from "components/actual-item-list"
 import {COMMON_DATE, STORAGE_DATE} from "resources/date-formats"
 import dummyData from "resources/dummy-data"
 
 
-// React 0.13.3 includes ES6 class syntax. This will replace React.createComponent
+
 export default class Application extends React.Component {
   // constructor is a special method that runs when the class is created.
   constructor() {
@@ -179,40 +176,45 @@ export default class Application extends React.Component {
     //if state completed is true, return new page, else... return this:
 
     return <div>
-      <h1 className="today">
+      <h1 className="today-date">
         {this.formatDate(currentDay.date)}
       </h1>
 
       <section className="bottom-components">
 
-        <div className="center">
-          <AddItem addNew={this.addItem.bind(this)} />
-          <h4>
-            *Press the <u>return</u> key to create a new item.
-          </h4>
-          <div className="buttons">
-            <button className="next" onClick={this.handleNextDay.bind(this)}>
-              {this.state.currentDayIndex == 0 ? "Save" : "Next"}
-            </button>
-            {this.state.currentDayIndex == 0 ? null : <button className="toggle" onClick={this.toggleActualVisibility.bind(this)}>
-              {currentDay.revealed ? "Hide" : "Show Actual"}
-            </button>}
+        <div className="column col-1">
+          <div className="left">
+            <DateList lastWeek={this.state.days} currentDayIndex={this.state.currentDayIndex} />
           </div>
-            <ul className="item-list">
-              {listItems}
-            </ul>
         </div>
 
-        <div className="right">
-        {/* This component decides to show depending on the currentDay reveal state. */}
-        <ActualItemList currentDay={currentDay}  />
+        <div className="column col-2">
+          <div className="center">
+            <AddItem addNew={this.addItem.bind(this)} />
+            <h4>
+              *Press the <u>return</u> key to create a new item.
+            </h4>
+            <div className="buttons">
+              <button className="next" onClick={this.handleNextDay.bind(this)}>
+                {this.state.currentDayIndex == 0 ? "Save" : "Next"}
+              </button>
+              {this.state.currentDayIndex == 0 ? null : <button className="toggle" onClick={this.toggleActualVisibility.bind(this)}>
+                {currentDay.revealed ? "Hide" : "Show Actual"}
+              </button>}
+            </div>
+              <ul className="item-list">
+                {listItems}
+              </ul>
+          </div>
         </div>
 
-        {/* Shows regardless of anything. */}
-        <div className="left">
-          <DateList lastWeek={this.state.days} currentDayIndex={this.state.currentDayIndex} />
+        <div className="column col-3">
+          <div className="right">
+            {/* This component decides to show depending on the currentDay reveal state. */}
+            <ActualItemList currentDay={currentDay}  />
+          </div>
         </div>
-        <span className="stretch"></span>
+
       </section>
 
     </div>
