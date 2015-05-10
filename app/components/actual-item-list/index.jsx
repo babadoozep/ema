@@ -1,16 +1,22 @@
 require("./actual-item-list.styl")
 
 import React from "react"
-import ItemList from "../item-list"
 
 export default class ActualItemList extends React.Component {
   render() {
     let {currentDay} = this.props
 
     if (currentDay.revealed) {
-      return <div>
-        <ItemList items={currentDay.items} />
-        </div>
+      let listItems = currentDay.items.map(function (item, i) {
+        return <div className="actual-item-background"><li key={i}>
+          {item}
+        </li></div>
+      })
+      return <div >
+        <ul className="actual">
+          {listItems}
+        </ul>
+      </div>
 
     } else {
       return <div className="directions">
