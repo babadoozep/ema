@@ -19,7 +19,7 @@ config = {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    publicPath: "/",
+    publicPath: "/ema/",
     filename: "[name].js",
     chunkFilename: "[chunkhash].js",
     sourceMapFilename: "debugging/[file].map",
